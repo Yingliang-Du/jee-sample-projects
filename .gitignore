@@ -1,0 +1,6 @@
+# build ignore
+**/target/
+
+# IDE ignore
+**/.idea/
+**/*.iml

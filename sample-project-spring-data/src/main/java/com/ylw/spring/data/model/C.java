@@ -1,8 +1,6 @@
 package com.ylw.spring.data.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by yingliangdu on 7/31/15.
@@ -13,6 +11,9 @@ public class C {
     @GeneratedValue
     private Long id;
     private String name;
+    @ManyToOne
+    @JoinColumn(name="b_id")
+    private B b;
 
     public Long getId() {
         return id;
@@ -28,5 +29,13 @@ public class C {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public B getB() {
+        return b;
+    }
+
+    public void setB(B b) {
+        this.b = b;
     }
 }

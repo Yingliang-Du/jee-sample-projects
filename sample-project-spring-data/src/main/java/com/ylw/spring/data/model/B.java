@@ -15,6 +15,8 @@ public class B {
     private String name;
     @ManyToMany(mappedBy = "bs")
     private Set<A> as = new HashSet<A>();
+    @OneToMany(cascade=CascadeType.ALL, mappedBy="b")
+    private Set<C> cs = new HashSet<C>();
 
     public Long getId() {
         return id;
@@ -40,4 +42,11 @@ public class B {
         this.as = as;
     }
 
+    public Set<C> getCs() {
+        return cs;
+    }
+
+    public void setCs(Set<C> cs) {
+        this.cs = cs;
+    }
 }
